@@ -12,6 +12,9 @@ class ContentModel: NSObject, CLLocationManagerDelegate , ObservableObject {
     
     var locationManager = CLLocationManager()
     
+    @Published var restaurants = [Business]()
+    @Published var sights = [Business]()
+    
     override init() {
         
         //  Init method of NSObject
@@ -28,17 +31,17 @@ class ContentModel: NSObject, CLLocationManagerDelegate , ObservableObject {
     // MARK: - Location Manager Delegate Methods
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-         
+        
         if locationManager.authorizationStatus == .authorizedAlways ||
             locationManager.authorizationStatus == .authorizedWhenInUse {
             
             // We have permission
             // Start geolocating the user, after we get permission
             locationManager.startUpdatingLocation()
-             
+            
             
         }
-         else if locationManager.authorizationStatus == .denied {
+        else if locationManager.authorizationStatus == .denied {
             
             // We don't have permission
             
@@ -56,10 +59,10 @@ class ContentModel: NSObject, CLLocationManagerDelegate , ObservableObject {
             // We have a location
             // Stop requesting the location after we get it once
             locationManager.stopUpdatingLocation()
-             
+            
             // TODO: If we have the cordinates of the user, send into Yelp API
-//            getBusinesses(category: "arts", location: userLocation!)
-            getBusinesses(category: "restaurants", location: userLocation!)
+            getBusinesses(category: Constants.sightsKey, location: userLocation!)
+            getBusinesses(category: Constants.restaurantsKey, location: userLocation!)
             
         }
         
@@ -72,10 +75,10 @@ class ContentModel: NSObject, CLLocationManagerDelegate , ObservableObject {
         
         // Create URL
         /*
-        let urlString = "https://api.yelp.com/v3/businesses/search?latitude=\(location.coordinate.latitude)&longitude=\(location.coordinate.longitude)&categories=\(category)&limit=6"
-        let url = URL(string: urlString)
-        */
-        var urlComponents = URLComponents(string: "https://api.yelp.com/v3/businesses/search")
+         let urlString = "https://api.yelp.com/v3/businesses/search?latitude=\(location.coordinate.latitude)&longitude=\(location.coordinate.longitude)&categories=\(category)&limit=6"
+         let url = URL(string: urlString)
+         */
+        var urlComponents = URLComponents(string: Constants.apiUrl)
         urlComponents?.queryItems = [
             URLQueryItem(name: "latitude", value: String(location.coordinate.latitude)),
             URLQueryItem(name: "longitude", value: String(location.coordinate.longitude)),
@@ -86,11 +89,11 @@ class ContentModel: NSObject, CLLocationManagerDelegate , ObservableObject {
         let url = urlComponents?.url
         
         if let url = url {
-        
+            
             // Create URLRequest
             var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10.0)
             request.httpMethod = "GET"
-            request.addValue("Bearer MP-Xh6AQhE3Ft3CXQnd9DafBOjR-i1GNOYqwbuU4i6IfOEGpMGWAVgs2PFTo5_87HfY2EgSwgmVta0gwEiR84jXzcVqlgAKKdT8q1npkIl5-CrqsrmESa0455h_TYXYx", forHTTPHeaderField: "Authorization")
+            request.addValue("Bearer \(Constants.apiKey)", forHTTPHeaderField: "Authorization")
             
             // Get URLSession
             let session = URLSession.shared
@@ -100,7 +103,37 @@ class ContentModel: NSObject, CLLocationManagerDelegate , ObservableObject {
                 
                 // Check that there isn't an error
                 if error == nil {
-                    print(response)
+                    
+                    do{
+                        // Parse JSON
+                        let decoder = JSONDecoder()
+                        let result = try decoder.decode(BusinessSearch.self, from: data!)
+                        
+                        
+                        DispatchQueue.main.async {
+                            
+                            // Assign results to the appropriate property
+//                            if category == Constants.sightsKey {
+//                                self.sights = result.businesses
+//                            }
+//                            else if category == Constants.restaurantsKey {
+//                                self.restaurants = result.businesses
+//                            }
+                            
+                            switch category {
+                            case Constants.sightsKey:
+                                self.sights = result.businesses
+                            case Constants.restaurantsKey:
+                                self.restaurants = result.businesses
+                            default:
+                                break 
+                            }
+                        }
+                        
+                    }
+                    catch{
+                        print(error)
+                    }
                 }
                 
             }
