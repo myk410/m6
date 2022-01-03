@@ -12,6 +12,8 @@ class ContentModel: NSObject, CLLocationManagerDelegate , ObservableObject {
     
     var locationManager = CLLocationManager()
     
+    @Published var authorizationState = CLAuthorizationStatus.notDetermined
+    
     @Published var restaurants = [Business]()
     @Published var sights = [Business]()
     
@@ -31,6 +33,9 @@ class ContentModel: NSObject, CLLocationManagerDelegate , ObservableObject {
     // MARK: - Location Manager Delegate Methods
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        
+        // Update the authorizationState property
+        authorizationState = locationManager.authorizationStatus
         
         if locationManager.authorizationStatus == .authorizedAlways ||
             locationManager.authorizationStatus == .authorizedWhenInUse {
@@ -83,7 +88,7 @@ class ContentModel: NSObject, CLLocationManagerDelegate , ObservableObject {
             URLQueryItem(name: "latitude", value: String(location.coordinate.latitude)),
             URLQueryItem(name: "longitude", value: String(location.coordinate.longitude)),
             URLQueryItem(name: "categories", value: category),
-            URLQueryItem(name: "limit", value: "6")
+            URLQueryItem(name: "limit", value: Constants.limit)
         ]
         
         let url = urlComponents?.url
@@ -126,7 +131,7 @@ class ContentModel: NSObject, CLLocationManagerDelegate , ObservableObject {
                             case Constants.restaurantsKey:
                                 self.restaurants = result.businesses
                             default:
-                                break 
+                                break
                             }
                         }
                         

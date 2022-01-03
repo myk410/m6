@@ -15,6 +15,10 @@
 		AD73D47127836C610094CC65 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD73D47027836C610094CC65 /* Business.swift */; };
 		AD73D47327836FF30094CC65 /* BusinessSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD73D47227836FF30094CC65 /* BusinessSearch.swift */; };
 		AD73D4762783782F0094CC65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD73D4752783782F0094CC65 /* Constants.swift */; };
+		AD73D47B27837D010094CC65 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD73D47A27837D010094CC65 /* HomeView.swift */; };
+		AD73D47E278381DD0094CC65 /* BusinessList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD73D47D278381DD0094CC65 /* BusinessList.swift */; };
+		AD73D480278384CD0094CC65 /* BusinessSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD73D47F278384CD0094CC65 /* BusinessSectionHeader.swift */; };
+		AD73D4822783862D0094CC65 /* BusinessSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD73D4812783862D0094CC65 /* BusinessSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		AD73D47027836C610094CC65 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		AD73D47227836FF30094CC65 /* BusinessSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSearch.swift; sourceTree = "<group>"; };
 		AD73D4752783782F0094CC65 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AD73D47A27837D010094CC65 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AD73D47D278381DD0094CC65 /* BusinessList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessList.swift; sourceTree = "<group>"; };
+		AD73D47F278384CD0094CC65 /* BusinessSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSectionHeader.swift; sourceTree = "<group>"; };
+		AD73D4812783862D0094CC65 /* BusinessSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,9 @@
 			isa = PBXGroup;
 			children = (
 				AD73D45F2783456F0094CC65 /* LaunchView.swift */,
+				AD73D47927837CBC0094CC65 /* Home */,
+				AD73D47827837CB80094CC65 /* Denied */,
+				AD73D47727837CAC0094CC65 /* Onboarding */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -109,6 +120,39 @@
 				AD73D4752783782F0094CC65 /* Constants.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AD73D47727837CAC0094CC65 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		AD73D47827837CB80094CC65 /* Denied */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Denied;
+			sourceTree = "<group>";
+		};
+		AD73D47927837CBC0094CC65 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AD73D47A27837D010094CC65 /* HomeView.swift */,
+				AD73D47C278381C40094CC65 /* List */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AD73D47C278381C40094CC65 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				AD73D47D278381DD0094CC65 /* BusinessList.swift */,
+				AD73D47F278384CD0094CC65 /* BusinessSectionHeader.swift */,
+				AD73D4812783862D0094CC65 /* BusinessSection.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,9 +226,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD73D4602783456F0094CC65 /* LaunchView.swift in Sources */,
+				AD73D47B27837D010094CC65 /* HomeView.swift in Sources */,
 				AD73D47127836C610094CC65 /* Business.swift in Sources */,
+				AD73D480278384CD0094CC65 /* BusinessSectionHeader.swift in Sources */,
 				AD73D45E2783456F0094CC65 /* CitySightsApp.swift in Sources */,
 				AD73D47327836FF30094CC65 /* BusinessSearch.swift in Sources */,
+				AD73D47E278381DD0094CC65 /* BusinessList.swift in Sources */,
+				AD73D4822783862D0094CC65 /* BusinessSection.swift in Sources */,
 				AD73D46F278347620094CC65 /* ContentModel.swift in Sources */,
 				AD73D4762783782F0094CC65 /* Constants.swift in Sources */,
 			);
