@@ -7,18 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD73D45E2783456F0094CC65 /* City_Sights_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD73D45D2783456F0094CC65 /* City_Sights_App.swift */; };
+		AD73D45E2783456F0094CC65 /* CitySightsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD73D45D2783456F0094CC65 /* CitySightsApp.swift */; };
 		AD73D4602783456F0094CC65 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD73D45F2783456F0094CC65 /* LaunchView.swift */; };
 		AD73D462278345700094CC65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD73D461278345700094CC65 /* Assets.xcassets */; };
 		AD73D465278345700094CC65 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD73D464278345700094CC65 /* Preview Assets.xcassets */; };
+		AD73D46F278347620094CC65 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD73D46E278347610094CC65 /* ContentModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AD73D45A2783456F0094CC65 /* City Sights App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "City Sights App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD73D45D2783456F0094CC65 /* City_Sights_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City_Sights_App.swift; sourceTree = "<group>"; };
+		AD73D45D2783456F0094CC65 /* CitySightsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySightsApp.swift; sourceTree = "<group>"; };
 		AD73D45F2783456F0094CC65 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		AD73D461278345700094CC65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD73D464278345700094CC65 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AD73D46E278347610094CC65 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +53,7 @@
 		AD73D45C2783456F0094CC65 /* City Sights App */ = {
 			isa = PBXGroup;
 			children = (
-				AD73D45D2783456F0094CC65 /* City_Sights_App.swift */,
+				AD73D45D2783456F0094CC65 /* CitySightsApp.swift */,
 				AD73D46D278345F00094CC65 /* Views */,
 				AD73D46C278345EA0094CC65 /* ViewModels */,
 				AD73D46B278345E30094CC65 /* Models */,
@@ -79,6 +81,7 @@
 		AD73D46C278345EA0094CC65 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				AD73D46E278347610094CC65 /* ContentModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -162,7 +165,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD73D4602783456F0094CC65 /* LaunchView.swift in Sources */,
-				AD73D45E2783456F0094CC65 /* City_Sights_App.swift in Sources */,
+				AD73D45E2783456F0094CC65 /* CitySightsApp.swift in Sources */,
+				AD73D46F278347620094CC65 /* ContentModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +300,7 @@
 				DEVELOPMENT_TEAM = RTYY7GKEGT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Grant permission to find restaurants and sights near you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -325,6 +330,7 @@
 				DEVELOPMENT_TEAM = RTYY7GKEGT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Grant permission to find restaurants and sights near you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
