@@ -19,6 +19,7 @@
 		AD73D47E278381DD0094CC65 /* BusinessList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD73D47D278381DD0094CC65 /* BusinessList.swift */; };
 		AD73D480278384CD0094CC65 /* BusinessSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD73D47F278384CD0094CC65 /* BusinessSectionHeader.swift */; };
 		AD73D4822783862D0094CC65 /* BusinessSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD73D4812783862D0094CC65 /* BusinessSection.swift */; };
+		AD73D48427838AB10094CC65 /* BusinessRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD73D48327838AB10094CC65 /* BusinessRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		AD73D47D278381DD0094CC65 /* BusinessList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessList.swift; sourceTree = "<group>"; };
 		AD73D47F278384CD0094CC65 /* BusinessSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSectionHeader.swift; sourceTree = "<group>"; };
 		AD73D4812783862D0094CC65 /* BusinessSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSection.swift; sourceTree = "<group>"; };
+		AD73D48327838AB10094CC65 /* BusinessRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				AD73D47D278381DD0094CC65 /* BusinessList.swift */,
 				AD73D47F278384CD0094CC65 /* BusinessSectionHeader.swift */,
 				AD73D4812783862D0094CC65 /* BusinessSection.swift */,
+				AD73D48327838AB10094CC65 /* BusinessRow.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD73D4602783456F0094CC65 /* LaunchView.swift in Sources */,
+				AD73D48427838AB10094CC65 /* BusinessRow.swift in Sources */,
 				AD73D47B27837D010094CC65 /* HomeView.swift in Sources */,
 				AD73D47127836C610094CC65 /* Business.swift in Sources */,
 				AD73D480278384CD0094CC65 /* BusinessSectionHeader.swift in Sources */,
