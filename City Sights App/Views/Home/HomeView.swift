@@ -26,7 +26,12 @@ struct HomeView: View {
                             Image(systemName: "location")
                             Text("Wakefield")
                             Spacer()
-                            Text("Switch to map view")
+                            
+                            Button("Switch to map view"){
+                                self.isMapShowing = true
+                            }
+
+                            
                         }
                         
                         Divider()
@@ -38,7 +43,8 @@ struct HomeView: View {
                 }
                 else{
                     // Show map
-                    
+                    BusinessMap()
+                        .ignoresSafeArea()
                 }
                 
             }
